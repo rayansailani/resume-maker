@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>Resume Maker v-0.01</h1> 
+      <h1>Resume Maker v-0.02</h1> 
       <ResumeForm/>
     </div>
   );

@@ -1,0 +1,16 @@
+.heading{
+    font-size:1.2em;
+    margin-left:0.6em;
+}
+.rule{
+    background-color: #69DDFF;
+    height: 2px;
+    border:none;
+    margin-bottom:12px;
+    margin-left:0.6em;
+    margin-right:0.6em;
+}
+.grid-center{
+    display:grid;
+    place-items: center;
+}

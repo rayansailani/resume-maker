@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+.resume-form{
+    background-color: #F2EFEA;
+    width:600px;
+    padding:0.6rem;
+    border-radius: 1rem;
+    box-shadow: 4px 4px 4px #C3BAAA;
+    font-family: 'Open Sans', sans-serif;
+}
+.pdfViewer{
+    min-width: -webkit-fill-available;
+    height: 600px;
+    border: none;
+}
+@media screen and (max-width:600px){
+    .resume-form{
+        width:80%;
+    }
+    .pdfViewer{
+        width:100%;
+        min-width: none;
+        height:20px;
+    }
+}
+.grid-center{
+    display:grid;
+    place-items: center;
+}

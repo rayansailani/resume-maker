@@ -3,21 +3,22 @@ import FormCollection from "./FromCollection";
 import { PDFViewer, PDFDownloadLink} from "@react-pdf/renderer";
 import { useState } from "react";
 import MyDocument from "../PDF/resume";
+import "./resumeForm.css";
 
 const ResumeForm = (props) => {
   const [userDetails, setUserDetails] = useState({});
-  const [showResume, setShowResume] = useState(false);
+  const [showResume, setShowResume] = useState(true);
   const [fileName, setFileName] = useState("resume.pdf");
   const HandleGenerateInput = (userDetails) => {
     setUserDetails(userDetails);
-    setShowResume(!showResume);
+    setShowResume(true);
     setFileName("Resume" + userDetails['name'].toString() +".pdf");
   };
   return (
-    <div>
+    <div className="resume-form">
       <FormCollection onGeneratePDF={HandleGenerateInput} />
       {showResume && (
-        <PDFViewer>
+        <PDFViewer className="pdfViewer">
           <MyDocument data={userDetails} />
         </PDFViewer>
       )}
@@ -25,11 +26,16 @@ const ResumeForm = (props) => {
         <PDFDownloadLink
           document={<MyDocument data={userDetails} />}
           fileName={fileName}
+          className="grid-center"
           style={{
             textDecoration: "none",
             color: "#4a4a4a",
-            backgroundColor: "grey",
-            border: "1px solid #4a4a4a",
+            backgroundColor: "white",
+            fontSize:"0.8rem",
+            borderRadius:"6px",
+            border:"none",
+            padding:"8px",
+            margin:'12px',
           }}
         >
           {({ blob, url, loading, error }) =>

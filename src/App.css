@@ -1,13 +1,15 @@
-body{
-  margin: 1rem;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  font-size:1.2em;
 }
-*{
+* {
   box-sizing: border-box;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
-
-
-h1{
-  text-align:center;
+.App{
+  margin-top:2rem;
+  display:grid;
+  place-items: center;
 }

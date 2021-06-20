@@ -24,7 +24,8 @@ const MyDocument = (props) => {
                 <Text>Name: {props.data["name"]}</Text>
                 <Text>Age: {props.data["age"]}</Text>
                 <Text>Description: {props.data["desc"]}</Text>
-
+                <Text>Skills: {props.data["skills"]}</Text>
+                <Text>Courses and Certifications: {props.data["courses"]}</Text>
             </View>
           : " " }
             </Page>

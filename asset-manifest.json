@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/resume-maker/static/css/main.63264133.chunk.css",
-    "main.js": "/resume-maker/static/js/main.98f301e0.chunk.js",
-    "main.js.map": "/resume-maker/static/js/main.98f301e0.chunk.js.map",
+    "main.css": "/resume-maker/static/css/main.1d0a761f.chunk.css",
+    "main.js": "/resume-maker/static/js/main.ad2e173c.chunk.js",
+    "main.js.map": "/resume-maker/static/js/main.ad2e173c.chunk.js.map",
     "runtime-main.js": "/resume-maker/static/js/runtime-main.fd213283.js",
     "runtime-main.js.map": "/resume-maker/static/js/runtime-main.fd213283.js.map",
     "static/js/2.ee5cc448.chunk.js": "/resume-maker/static/js/2.ee5cc448.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.f97e09d5.chunk.js": "/resume-maker/static/js/3.f97e09d5.chunk.js",
     "static/js/3.f97e09d5.chunk.js.map": "/resume-maker/static/js/3.f97e09d5.chunk.js.map",
     "index.html": "/resume-maker/index.html",
-    "static/css/main.63264133.chunk.css.map": "/resume-maker/static/css/main.63264133.chunk.css.map",
+    "static/css/main.1d0a761f.chunk.css.map": "/resume-maker/static/css/main.1d0a761f.chunk.css.map",
     "static/js/2.ee5cc448.chunk.js.LICENSE.txt": "/resume-maker/static/js/2.ee5cc448.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fd213283.js",
     "static/js/2.ee5cc448.chunk.js",
-    "static/css/main.63264133.chunk.css",
-    "static/js/main.98f301e0.chunk.js"
+    "static/css/main.1d0a761f.chunk.css",
+    "static/js/main.ad2e173c.chunk.js"
   ]
 }

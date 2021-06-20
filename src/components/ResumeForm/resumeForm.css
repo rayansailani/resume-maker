@@ -19,7 +19,7 @@
     .pdfViewer{
         width:100%;
         min-width: none;
-        height:20px;
+        height:100px;
     }
 }
 .grid-center{

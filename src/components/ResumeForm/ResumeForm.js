@@ -39,7 +39,7 @@ const ResumeForm = (props) => {
           }}
         >
           {({ blob, url, loading, error }) =>
-            loading ? "Loading document..." : "Download Pdf"
+            loading ? "Loading document..." : "Download PDF"
           }
         </PDFDownloadLink>
       }

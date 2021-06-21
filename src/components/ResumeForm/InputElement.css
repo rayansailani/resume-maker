@@ -10,7 +10,6 @@
     font-weight: bold;
 }
 .input-element{
-    max-width: max-content;
     border-radius: 4px;
     border:none;
     height: 2em;

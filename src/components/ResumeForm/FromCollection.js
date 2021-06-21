@@ -43,10 +43,10 @@ const FormCollection = (props) => {
     {label:"Name", value:userName, type:"text", ClassName:"name", change:handleNameChange},
     {label:"Age", value:userAge ,type:"number", ClassName:"age", change:hangdleAgeChange},
     {label:"Career Objective", value:userDescription, type:"textArea", ClassName:"obj", change:handelDescriptionChange},
-    // {label:"Education", value:userEducation, type:"Custom", ClassName:"education", change:handleEducationChange},
+    {label:"Education", value:userEducation, type:"Custom", ClassName:"education", change:handleEducationChange},
     {label:"Skills", value:userSkills, type:"textArea", ClassName:"skills",change:handleUserSkills},
-    // {label:"Project", value:userProjects, type:"Custom", ClassName:"projects", change:handleUserProjects},
-    // {label:"Experience", value:userExperience, type:"Custom", ClassName:"exp", change:handleExperienceChange},
+    {label:"Project", value:userProjects, type:"Custom", ClassName:"projects", change:handleUserProjects},
+    {label:"Experience", value:userExperience, type:"Custom", ClassName:"exp", change:handleExperienceChange},
     {label:"Courses", value:userCourses, type:"textArea", ClassName:"courses", change:handleUserCourses}
   ];
   const handleSubmitForm = (event) => {

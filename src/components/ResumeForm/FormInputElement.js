@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./InputElement.css";
 import CustomInputField from "./CustomInputElement";
 
@@ -7,6 +7,7 @@ const FormInputElement = (props) => {
   const handleChangeInput = (event) => {
     props.handleChangeFunction(event.target.value);
   };
+  
   const customInputChange = (values) =>{
     console.log(values);
   }
@@ -26,9 +27,14 @@ const FormInputElement = (props) => {
       {label:"Role", type:"text", start:"NULL", stop:"NULL"},
       {label:"Start Date", type:"Date", start:"NULL", stop:"NULL"},
       {label:"End Date", type:"Date", start:"NULL", stop:"NULL"},
-     ],
-
-    
+     ],  
+  };
+  const [fields, setFields] = useState([<CustomInputField config ={customInputConfig[props.label]} handleInputChange={customInputChange} />]);
+  const handleExtra = (event) =>{
+    event.preventDefault();
+    setFields((prevs)=>{
+      return [...prevs, <CustomInputField config ={customInputConfig[props.label]} handleInputChange={customInputChange} />]
+    })
   }
 
   if (props.type === "text" || props.type === "number") {
@@ -60,32 +66,12 @@ const FormInputElement = (props) => {
     );
   }
   else{
-    return <CustomInputField config ={customInputConfig[props.label]} handleInputChange={customInputChange} />
+    return (
+      <div>
+    {fields.map(ip=>ip)}
+    <button onClick={handleExtra}>Add an additional {props.label} </button>
+    </div>
+    );
   }
-  // return (
-  //   <div className="input-field">
-  //     <label className="input-label" htmlFor={id}>
-  //       {props.label}
-  //     </label>
-  //     {(props.type === "text" || props.type === "number") && (
-  //       <input
-  //         id={id}
-  //         required={true}
-  //         value={props.value}
-  //         onChange={handleChangeInput}
-  //         type={props.type}
-  //         className={"input-element " + props.ClassName.toString()}
-  //       />
-  //     )}
-  //     {props.type === "textArea" && (
-  //       <textarea
-  //         id={id}
-  //         value={props.value}
-  //         onChange={handleChangeInput}
-  //         ClassName={"input-element " + props.ClassName.toString()}
-  //       ></textarea>
-  //     )}
-  //   </div>
-  // );
 };
 export default FormInputElement;

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import "./InputElement.css";
 import CustomInputField from "./CustomInputElement";
 
@@ -7,36 +7,6 @@ const FormInputElement = (props) => {
   const handleChangeInput = (event) => {
     props.handleChangeFunction(event.target.value);
   };
-  
-  const customInputChange = (values) =>{
-    console.log(values);
-  }
-  // custom input element configuration
-  const customInputConfig = {
-    Education:
-      [{label:"Name of institution", type:"text", start:"NULL", stop:"NULL"},
-      {label:"Year of passing", type:"date", include:"true", stop:"false"},
-      {label:"Score", type:"number", include:"true", stop:"true"}],
-     Project:[
-      {label:"Name", type:"text", start:"NULL", stop:"NULL"},
-      {label:"Tools", type:"text", start:"NULL", stop:"NULL"},
-      {label:"Description", type:"text", start:"NULL", stop:"NULL"},
-     ],
-     Experience:[
-      {label:"Name of Organisation", type:"text", start:"NULL", stop:"NULL"},
-      {label:"Role", type:"text", start:"NULL", stop:"NULL"},
-      {label:"Start Date", type:"Date", start:"NULL", stop:"NULL"},
-      {label:"End Date", type:"Date", start:"NULL", stop:"NULL"},
-     ],  
-  };
-  const [fields, setFields] = useState([<CustomInputField config ={customInputConfig[props.label]} handleInputChange={customInputChange} />]);
-  const handleExtra = (event) =>{
-    event.preventDefault();
-    setFields((prevs)=>{
-      return [...prevs, <CustomInputField config ={customInputConfig[props.label]} handleInputChange={customInputChange} />]
-    })
-  }
-
   if (props.type === "text" || props.type === "number") {
     return (
       <div className="input-field">
@@ -66,12 +36,7 @@ const FormInputElement = (props) => {
     );
   }
   else{
-    return (
-      <div>
-    {fields.map(ip=>ip)}
-    <button onClick={handleExtra}>Add an additional {props.label} </button>
-    </div>
-    );
+    return <CustomInputField label={props.label}/>
   }
 };
 export default FormInputElement;

@@ -10,7 +10,7 @@ const FormCollection = (props) => {
   const [userSkills, setUserSkills] = useState([]);
   const [userExperience, setUserExperience] = useState([]);
   const [userProjects, setUserProjects] = useState([]);
-  const [userCourses, setUserCourses] = useState([]);
+  const [userCourses, setUserCourses] = useState("");
 
   let userDetails = {};
 
@@ -24,6 +24,7 @@ const FormCollection = (props) => {
     setDescription(desc);
   };
   const handleEducationChange = (education) =>{
+    console.log(education);
     setUserEducation(education);
   }
   const handleExperienceChange = (exp) =>{
@@ -58,13 +59,20 @@ const FormCollection = (props) => {
       desc: userDescription,
       skills:userSkills,
       courses:userCourses,
+      education:userEducation,
+      exp:userExperience,
+      projects:userProjects
     };
+    console.log(userDetails);
     props.onGeneratePDF(userDetails);
     setName("");
     setDescription("");
     setAge("");
     setUserSkills("");
     setUserCourses("");
+    setUserEducation([]);
+    setUserExperience([]);
+    setUserProjects([]);
   };
   return (
     <div>
@@ -83,21 +91,6 @@ const FormCollection = (props) => {
             />
           })
         }
-        {/* <FormInputElement
-          label="Name"
-          handleChangeFunction={handleNameChange}
-          value={userName}
-        />
-        <FormInputElement
-          label="Age"
-          handleChangeFunction={hangdleAgeChange}
-          value={userAge}
-        />
-        <FormInputElement
-          label="Description"
-          handleChangeFunction={handelDescriptionChange}
-          value={userDescription}
-        /> */}
         <div className="grid-center">
         <button type="submit" style={{
             textDecoration: "none",

@@ -36,7 +36,8 @@ const FormInputElement = (props) => {
     );
   }
   else{
-    return <CustomInputField label={props.label}/>
+    return <CustomInputField label={props.label} changeFunction = {props.handleChangeFunction}/>
   }
+  
 };
 export default FormInputElement;

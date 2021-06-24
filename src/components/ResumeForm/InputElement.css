@@ -6,8 +6,9 @@
 .input-label{
     display:block;
     margin:0;
-    font-size:.5em;
+    font-size:.6em;
     font-weight: bold;
+    margin-bottom:10px;
 }
 .input-element{
     border-radius: 4px;
@@ -34,4 +35,25 @@ textarea{
     height:100px;
     font-family:'Open Sans', sans-serif;
     font-size:10px;
+}
+.increment-button{
+    float:right;
+    background:#69DDFF;
+    border:none;
+    width:24px;
+    height:24px;
+    border-radius: 50%;
+    color:white;
+    margin-right:20px;
+}
+.increment-button:active{
+    outline: none;
+}
+.increment-button:hover{
+    opacity: 0.7;
+}
+.input-small{
+    display:block;
+    font-size:.5em;
+    font-weight: bold;
 }

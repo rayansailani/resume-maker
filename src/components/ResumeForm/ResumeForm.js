@@ -7,7 +7,7 @@ import "./resumeForm.css";
 
 const ResumeForm = (props) => {
   const [userDetails, setUserDetails] = useState({});
-  const [showResume, setShowResume] = useState(false);
+  const [showResume, setShowResume] = useState(true);
   const [fileName, setFileName] = useState("resume.pdf");
   const HandleGenerateInput = (userDetails) => {
     setUserDetails(userDetails);

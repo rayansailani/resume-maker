@@ -18,17 +18,17 @@ const CustomInputField = (props) => {
       {label:"End Date", type:"Date", start:"NULL", stop:"NULL"},
      ],  
   };
+  
   const [values,setValues] = useState([customInputConfig[props.label].map((element, index)=>{
     return {label:element.label, val:null};
   })]);
   let tempValues = values;
-  console.log("values",values);
   
   const handleCustomInputChange = (e, index, inputNo, label) =>{
-    // console.log(index, inputNo, label)
+    
     tempValues[index][inputNo].val = e.target.value;
     setValues(tempValues);
-    console.log(values);
+    props.changeFunction(values);
   }
   const handleIncrementValues = () =>{  
     setValues((prevState)=>{
@@ -39,17 +39,19 @@ const CustomInputField = (props) => {
   }
   
   return (
-    <div>
+    <div className="input-field" >
       <form>
+      <p className="input-label">{props.label}</p>
     {values.map((value, index)=>{
       return (
         <div key={index}>
           {
             customInputConfig[props.label].map((element, inputFieldNo)=>{
               return (
-                <div key={index.toString()+"-"+inputFieldNo.toString()}>
-                <label>{element.label}</label>
-                <input type={element.type} onChange={(e)=>handleCustomInputChange(e, index, inputFieldNo, element.label)}/>
+                
+                <div  key={index.toString()+"-"+inputFieldNo.toString()}>
+                <label className="input-small">{element.label}</label>
+                <input className="input-element" type={element.type} onChange={(e)=>handleCustomInputChange(e, index, inputFieldNo, element.label)}/>
                 </div>
                 
               )
@@ -59,7 +61,7 @@ const CustomInputField = (props) => {
         </div>
       )
     })}
-    <button type="button" onClick={handleIncrementValues}>+</button>
+    <button type="button" className="increment-button" onClick={handleIncrementValues}>+</button>
     </form>
     </div>
   );

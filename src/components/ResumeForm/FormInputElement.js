@@ -1,13 +1,12 @@
 import React from "react";
 import "./InputElement.css";
-import CustomInputField from "./CustomInputElement";
 
 const FormInputElement = (props) => {
   const id = "id" + props.label;
   const handleChangeInput = (event) => {
     props.handleChangeFunction(event.target.value);
   };
-  if (props.type === "text" || props.type === "number") {
+  if (props.type === "text") {
     return (
       <div className="input-field">
         <label className="input-label" htmlFor={id}>
@@ -23,7 +22,7 @@ const FormInputElement = (props) => {
         />
       </div>
     );
-  } else if (props.type === "textArea") {
+  } else {
     return (
       <div className="input-field">
         <label className="input-label" htmlFor={id}>{props.label}</label>
@@ -35,9 +34,9 @@ const FormInputElement = (props) => {
       </div>
     );
   }
-  else{
-    return <CustomInputField label={props.label} changeFunction = {props.handleChangeFunction}/>
-  }
+  // else{
+  //   return <CustomInputField label={props.label} changeFunction = {props.handleChangeFunction}/>
+  // }
   
 };
 export default FormInputElement;

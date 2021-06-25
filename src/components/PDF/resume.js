@@ -16,20 +16,21 @@ const styles = StyleSheet.create({
 
 // Create Document Component
 const MyDocument = (props) => {
-    console.log(props.data);
-    return (
-        <Document>
-            <Page style={styles.page}>
-            {props.data ? <View>
-                <Text>Name: {props.data["name"]}</Text>
-                <Text>Age: {props.data["age"]}</Text>
-                <Text>Description: {props.data["desc"]}</Text>
-                <Text>Skills: {props.data["skills"]}</Text>
-                <Text>Courses and Certifications: {props.data["courses"]}</Text>
-            </View>
-          : " " }
-            </Page>
-        </Document>
-    );
-}
+  // console.log(props.data);
+  return (
+    <Document>
+      <Page style={styles.page}>
+        {props.data && (
+          <View>
+            <Text>Name: {props.data["name"]}</Text>
+            <Text>Age: {props.data["age"]}</Text>
+            <Text>Description: {props.data["desc"]}</Text>
+            <Text>Skills: {props.data["skills"]}</Text>
+            <Text>Courses and Certifications: {props.data["courses"]}</Text>
+          </View>
+        )}
+      </Page>
+    </Document>
+  );
+};
 export default MyDocument;

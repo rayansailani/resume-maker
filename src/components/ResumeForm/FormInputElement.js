@@ -14,7 +14,6 @@ const FormInputElement = (props) => {
         </label>
         <input
           id={id}
-          required={true}
           value={props.value}
           onChange={handleChangeInput}
           type={props.type}

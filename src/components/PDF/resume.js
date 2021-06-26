@@ -12,11 +12,14 @@ const styles = StyleSheet.create({
     padding: 10,
     flexGrow: 1,
   },
+  blockView:{
+    display:"block"
+  }
 });
 
 // Create Document Component
 const MyDocument = (props) => {
-  // console.log(props.data);
+  console.log(props.data);
   return (
     <Document>
       <Page style={styles.page}>
@@ -27,6 +30,27 @@ const MyDocument = (props) => {
             <Text>Description: {props.data["desc"]}</Text>
             <Text>Skills: {props.data["skills"]}</Text>
             <Text>Courses and Certifications: {props.data["courses"]}</Text>
+            <Text>Education:</Text>
+             <Text style={styles.blockView}>{props.data.education ? props.data.education.map(education=>{
+              return education.map(eduValues=>{
+                return <Text>{eduValues.val.toString()  +" - "}</Text>
+
+              })
+            }): ""}</Text>
+            {/* <Text>Projects: {
+              props.data.projects ? props.data.projects.map((projects)=>{
+                return projects.map(project=>{
+                  return <Text>{project.val.toString() + " - "}</Text>
+                })
+              }): ""
+            }</Text>
+            <Text>Experience: {
+              props.data.exp ? props.data.projects.map((exps)=>{
+                return exps.map(exp=>{
+                  return <Text>{exp.val.toString() + " - "}</Text>
+                })
+              }): ""
+            }</Text> */}
           </View>
         )}
       </Page>

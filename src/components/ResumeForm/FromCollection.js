@@ -6,20 +6,24 @@ import CustomInputField from "./CustomInputElement";
 import customInputConfig from "./inputConfig";
 const FormCollection = (props) => {
   const [userName, setName] = useState("");
-  // const [userAge, setAge] = useState("");{
   const [userDescription, setDescription] = useState("");
-  const [userEducation, setUserEducation] = useState([customInputConfig["Education"].map((element, index)=>{
-    return {label:element.label, val:undefined};
-  })]);
-  const [userSkills, setUserSkills] = useState([]);
-  const [userExperience, setUserExperience] = useState([customInputConfig['Experience'].map((element, index)=>{
-    return {label:element.label, val:undefined};
-  })]);
-  const [userProjects, setUserProjects] = useState([customInputConfig["Project"].map((element, index)=>{
-    return {label:element.label, val:undefined};
-  })]);
+  const [userEducation, setUserEducation] = useState([
+    customInputConfig["Education"].map((element) => {
+      return { label: element.label, val: undefined };
+    }),
+  ]);
+  const [userSkills, setUserSkills] = useState("");
+  const [userExperience, setUserExperience] = useState([
+    customInputConfig["Experience"].map((element, index) => {
+      return { label: element.label, val: undefined };
+    }),
+  ]);
+  const [userProjects, setUserProjects] = useState([
+    customInputConfig["Project"].map((element, index) => {
+      return { label: element.label, val: undefined };
+    }),
+  ]);
   const [userCourses, setUserCourses] = useState("");
-
   let userDetails = {};
 
   const handleNameChange = (name) => {
@@ -30,7 +34,6 @@ const FormCollection = (props) => {
   };
   const handleEducationChange = (education) => {
     setUserEducation(education);
-    
   };
   const handleExperienceChange = (exp) => {
     setUserExperience(exp);
@@ -44,7 +47,6 @@ const FormCollection = (props) => {
   const handleUserSkills = (skills) => {
     setUserSkills(skills);
   };
-
   const InputFields = [
     {
       label: "Name",
@@ -108,21 +110,14 @@ const FormCollection = (props) => {
       exp: userExperience,
       projects: userProjects,
     };
-    console.log(userDetails);
     props.onGeneratePDF(userDetails);
     setName("");
     setDescription("");
     setUserSkills("");
     setUserCourses("");
-    setUserEducation([customInputConfig["Education"].map((element, index)=>{
-      return {label:element.label, val:undefined};
-    })]);
-    setUserExperience([customInputConfig["Experience"].map((element, index)=>{
-      return {label:element.label, val:undefined};
-    })]);
-    setUserProjects([customInputConfig["Project"].map((element, index)=>{
-      return {label:element.label, val:undefined};
-    })]);
+    setUserEducation([]);
+    setUserExperience([]);
+    setUserProjects([]);
   };
   return (
     <div>
@@ -131,7 +126,12 @@ const FormCollection = (props) => {
         <hr className="rule"></hr>
         {InputFields.map((ip) => {
           return ip.type === "Custom" ? (
-            <CustomInputField key={ip.label} label={ip.label} changeFunction={ip.change} value={ip.value}/>
+            <CustomInputField
+              key={ip.label}
+              label={ip.label}
+              changeFunction={ip.change}
+              value={ip.value}
+            />
           ) : (
             <FormInputElement
               key={ip.label}
